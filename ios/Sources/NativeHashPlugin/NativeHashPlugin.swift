@@ -11,7 +11,7 @@ public class NativeHashPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "NativeHashPlugin"
     public let jsName = "NativeHash"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "sha256", returnType: CAPPluginReturnPromise)
     ]
 
     @objc func sha256(_ call: CAPPluginCall) {
