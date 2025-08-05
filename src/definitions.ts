@@ -1,3 +1,3 @@
 export interface NativeHashPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+    sha256(options: { text: string }): Promise<{ hash: string }>;
 }

@@ -20,8 +20,7 @@ class NativeHashPlugin : Plugin() {
         val hash = digest.digest(input.toByteArray())
         val base64Hash = Base64.encodeToString(hash, Base64.NO_WRAP)
 
-        call.resolve(
-            mapOf("hash" to base64Hash)
-        )
+        val ret = JSObject().put("hash", base64Hash)
+        call.resolve(ret)
     }
 }
