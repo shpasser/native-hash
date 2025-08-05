@@ -12,12 +12,20 @@ public class NativeHashPlugin: CAPPlugin, CAPBridgedPlugin {
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
     ]
-    private let implementation = NativeHash()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func sha256(_ call: CAPPluginCall) {
+        guard let text = call.getString("text") else {
+            call.reject("Missing 'text'")
+            return
+        }
+
+        let data = Data(text.utf8)
+        let digest = SHA256.hash(data: data)
+        let hashData = Data(digest)
+        let base64Hash = hashData.base64EncodedString()
+
         call.resolve([
-            "value": implementation.echo(value)
+            "hash": base64Hash
         ])
     }
 }
