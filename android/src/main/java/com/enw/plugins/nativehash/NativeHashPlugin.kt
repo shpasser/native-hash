@@ -2,10 +2,12 @@ package com.enw.plugins.nativehash
 
 import java.security.MessageDigest
 import android.util.Base64
+import com.getcapacitor.JSObject
 import com.getcapacitor.PluginCall
 import com.getcapacitor.Plugin
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.getcapacitor.PluginMethod
+
 
 @CapacitorPlugin(name = "NativeHash")
 class NativeHashPlugin : Plugin() {
