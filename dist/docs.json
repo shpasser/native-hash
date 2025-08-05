@@ -1,0 +1,31 @@
+{
+  "api": {
+    "name": "NativeHashPlugin",
+    "slug": "nativehashplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "sha256",
+        "signature": "(options: { text: string; }) => Promise<{ hash: string; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ text: string; }"
+          }
+        ],
+        "returns": "Promise<{ hash: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "sha256"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
